@@ -55,7 +55,7 @@ export default class ServerApi {
    * Handles 'open' event from WebSocket connection.
    * @private
    */
-  #handleOpen = (e) => {
+  #handleOpen = () => {
     console.log('Connection opened')
   }
 
