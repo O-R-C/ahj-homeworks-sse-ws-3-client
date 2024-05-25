@@ -61,6 +61,7 @@ export default class OnlineReport {
    */
   #addListeners() {
     document.addEventListener('reportMessage', this.#handleReportMessage)
+    document.addEventListener('connectionOpen', this.#handleConnectionOpen)
   }
 
   /**
@@ -69,6 +70,17 @@ export default class OnlineReport {
    * @private
    */
   #handleReportMessage = ({ detail: { payload: data } }) => {
+    const { type } = data
+    type === 'gameStarted' && this.#ui.clear()
     this.#ui.addPost(data)
+  }
+
+  /**
+   * Handles connection open event
+   * @param {Event} event - event object
+   * @private
+   */
+  #handleConnectionOpen = () => {
+    this.#ui.clear()
   }
 }

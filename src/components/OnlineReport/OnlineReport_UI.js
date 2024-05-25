@@ -30,4 +30,11 @@ export default class OnlineReport_UI extends BaseUI {
     this.app.append(postElement)
     postElement.scrollIntoView({ behavior: 'smooth' })
   }
+
+  /**
+   * Clears the app
+   */
+  clear() {
+    this.app.innerHTML = ''
+  }
 }

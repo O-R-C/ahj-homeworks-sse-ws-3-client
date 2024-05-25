@@ -57,6 +57,8 @@ export default class ServerApi {
    */
   #handleOpen = () => {
     console.log('Connection opened')
+
+    firesEvent('connectionOpen')
   }
 
   /**
